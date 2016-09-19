@@ -65,14 +65,14 @@ With node.js and npm you will be able to easily update to the latest version of 
 - change directory to: ```cd ./lib/node_modules/studiolite``` 
 - run the command ```node server.js``` if you wish to use the bundled express server
 - you may also host it directly on your own web server if you like, such as apache or IIS
-- open browser and point it to ```[YOUR_IP]:8080/_studiolite-dev/studiolite.html```
+- open browser and point it to ```[YOUR_IP]:8080/_studiolite-dist/studiolite.html```
 
 <h4>Option 2:</h4>
 - Download the zip from GitHub
-- On your web server (i.e.: apache, IIS) create a root directory and name it: _studiolite-dev
-- Unzip all files into _studiolite-dev directory
-- open browser and point it to ```[YOUR_IP]/_studiolite-dev/studiolite.html```
-- IMPORTANT: make sure _studiolite-dev is in the root of web server
+- On your web server (i.e.: apache, IIS) create a root directory and name it: _studiolite-dist
+- Unzip all files into _studiolite-dist directory
+- open browser and point it to ```[YOUR_IP]/_studiolite-dist/studiolite.html```
+- IMPORTANT: make sure _studiolite-dist is in the root of web server
 
 Main html files
 ------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 
-app.use('/_studiolite-dev/', express.static(__dirname));
+app.use('/_studiolite-dist/', express.static(__dirname));
 
 var port = process.env.PORT || 8080;
 
@@ -30,7 +30,7 @@ isPortTaken(8080, function (err) {
     app.listen(port, function () {
         console.log('\n========================================================================================\n');
         console.log("Server is listening on port " + port + "\n");
-        console.log("Now open a browser and point it to http://localhost:8080/_studiolite-dev/studiolite.html");
+        console.log("Now open a browser and point it to http://localhost:8080/_studiolite-dist/studiolite.html");
         console.log('\n========================================================================================\n');
     });
 });

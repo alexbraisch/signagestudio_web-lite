@@ -1,18 +1,18 @@
 #!/bin/sh
 
 echo 'publishing to npm'
-cd /var/www/sites/dynasite/htdocs/_studiolite-dev
+cd /var/www/sites/dynasite/htdocs/_studiolite-dist
 npm publish .
 
 
-cd /var/www/sites/dynasite/htdocs/_studiolite-dev/_utils
+cd /var/www/sites/dynasite/htdocs/_studiolite-dist/_utils
 dos2unix *
 
 
 ### remove old dirs ###
 echo 'removing and copying new _studiolite-tmp'
 rm -r -f ../../_studiolite-tmp/
-cp -r -f ../../_studiolite-dev/ ../../_studiolite-tmp/
+cp -r -f ../../_studiolite-dist/ ../../_studiolite-tmp/
 
 
 ### inject new localizations ##

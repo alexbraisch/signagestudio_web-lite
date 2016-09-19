@@ -160,7 +160,7 @@ define(['jquery', 'backbone'], function ($, Backbone) {
             if (i_authMode == self.AUTH_COOKIE) {
                 $.removeCookie('signagestudioweblite', {path: '/'});
                 $.removeCookie('signagestudioweblite', {path: '/_studiolite'});
-                $.removeCookie('signagestudioweblite', {path: '/_studiolite-dev'});
+                $.removeCookie('signagestudioweblite', {path: '/_studiolite-dist'});
                 $.removeCookie('signagestudioweblite', {path: '/_studiolite-dist'});
             }
 

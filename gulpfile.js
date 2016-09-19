@@ -77,8 +77,8 @@ gulp.task('_uploadDocs', shell.task([
 
 
 gulp.task('_uploadVersionFiles', shell.task([
-    'scp /cygdrive/c/msweb/signagestudio_web-lite/package.json Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dev/',
-    'scp /cygdrive/c/msweb/signagestudio_web-lite/studiolite.html Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dev/'
+    'scp /cygdrive/c/msweb/signagestudio_web-lite/package.json Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dist/',
+    'scp /cygdrive/c/msweb/signagestudio_web-lite/studiolite.html Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dist/'
 ]));
 
 gulp.task('_genDocs', function () {
@@ -192,7 +192,7 @@ gulp.task('_htmlCopy', function () {
 gulp.task('_rsync', function () {
     var rsync = Rsync.build({
         source: '/cygdrive/c/msweb/signagestudio_web-lite/',
-        destination: 'Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dev/',
+        destination: 'Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dist/',
         exclude: ['*.bat', '*.iml', '.gitignore', 'gulpfile.js', '.git', '.idea/', '_common/', '_doctheme/', '_assets/', '_utils/', '*node_modules', '*SignageStudio/', '*Spotify/']
     });
     rsync.set('progress');
