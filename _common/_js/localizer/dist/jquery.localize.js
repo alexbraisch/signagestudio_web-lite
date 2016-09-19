@@ -54,11 +54,12 @@
         };
         jsonCall = function (file, pkg, lang, level) {
 
-            var loadLocal = function () {
+            var loadLocal = function (lang) {
+
                 // in development mode load through local file (english only supported)
-                console.log('loading dev locals');
-                lang = 'en';
-                file = 'local-en.json';
+                console.log('loading dev locals for ' + lang);
+                lang = typeof lang !== 'undefined' ? lang : 'en';
+                file = 'local-'+lang+'.json';
                 var ajaxOptions, errorFunc, successFunc;
                 if (options.pathPrefix != null) {
                     file = "" + options.pathPrefix + "/" + file;
@@ -89,21 +90,38 @@
                 return $.ajax(ajaxOptions);
             };
 
+            function isInArray(value, array) {
+                return array.indexOf(value) !== -1;
+            }
+
             /* in distribution mode load through web service */
             // if (1) { // enable to test localization in dev env
-            if (window.location.href.indexOf('dist') > -1) {
+            if (window.location.href.indexOf('dist') !== -1) {
                 console.log('loading dist locals');
-                pepper.getLocalizationNew(lang, function (e) {
 
-                    // if getting local from galaxy failed, which sometimes happens no idea why, load from local
-                    if (_.isNull(e))
-                        return loadLocal();
+                // Local, self-translated languages
+                localLanguages = ['de'];
 
-                    var d = e['studiolite'];
-                    $.extend(intermediateLangData, d);
-                    notifyDelegateLanguageLoaded(intermediateLangData);
-                    return loadLanguage(pkg, lang, level + 1);
-                });
+                // Checks if the selected language was already locally translated by us 
+                // and if so, will use that version
+                if(isInArray(lang, localLanguages)) {
+                    console.log('Local language file (' + lang + ') available');
+                    return loadLocal(lang);
+
+                } else {
+                    pepper.getLocalizationNew(lang, function (e) {
+                        console.log('Loading new lang: ' + lang);
+
+                        // if getting local from galaxy failed, which sometimes happens no idea why, load from local
+                        if (_.isNull(e))
+                            return loadLocal();
+
+                        var d = e['studiolite'];
+                        $.extend(intermediateLangData, d);
+                        notifyDelegateLanguageLoaded(intermediateLangData);
+                        return loadLanguage(pkg, lang, level + 1);
+                    });
+                }
             } else {
                 // if running dev mode, load from local
                 loadLocal();
