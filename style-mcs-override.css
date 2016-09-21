@@ -1,3 +1,57 @@
+/* Header */
+.navbar,
+.navbar-inverse {
+  background-color: #afca00;
+  border-color: #afca00;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+.faHeader, .faHeader:hover {
+  color: inherit;
+}
+
+#headerPad {
+  background-color: transparent;
+}
+
+/* Side Nav */
+#appNavigator, #footer {
+  background-color: #484847;
+}
+
+#appNavigator li {
+  background-color: #484847;
+  border: 0;
+}
+
+#appNavigator li:hover,.navActiveSel {
+  background-color: #afca00 !important;
+}
+
+/* Side bar */
 #resourceLiseUpload {
     left: 250px;
+}
+
+/* Footer */
+#footerText {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #ccc;
+}
+
+#footerText a, #footerText a:visited {
+  color: #afca00;
+}
+
+#footerText a:hover, #footerText a:active {
+  color: #fff;
 }
