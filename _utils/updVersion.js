@@ -27,10 +27,10 @@ footer = footer.replace(/:BUILD:/gi, fullBuild);
 var dashVersion = '<span class="dashboardBullets" data-localize="version"> Version :BUILD: </span>';
 dashVersion = dashVersion.replace(/:BUILD:/gi, fullBuild);
 
-var studiolite = fs.readFileSync('../studiolite.html','utf8');
+var studiolite = fs.readFileSync('../studiolite.mcs.html','utf8');
 studiolite = studiolite.replace(/<span class="reshid hiddenElement" id="footerText">(.*)<\/span>/gi, footer);
 studiolite = studiolite.replace(/<span class="dashboardBullets" data-localize="version">(.*)<\/span>/gi, dashVersion);
-fs.writeFileSync('../studiolite.html', studiolite, 'utf8');
+fs.writeFileSync('../studiolite.mcs.html', studiolite, 'utf8');
 
 // add build number to npm
 var git = fs.readFileSync('../README.md', 'utf8');

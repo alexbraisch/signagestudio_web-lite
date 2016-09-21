@@ -31,7 +31,7 @@ Best of all, you will take full advantage of the world's most popular Digital Si
 
 Links:
 ------------------------------------------------------------------------
-- Cloud web app: https://galaxy.signage.me/_studiolite-dist/studiolite.html
+- Cloud web app: https://galaxy.signage.me/_studiolite-dist/studiolite.mcs.html
 - Home: http://lite.digitalsignage.com
 - Docs: http://www.digitalsignage.com/msdocs/
 - Support: http://script.digitalsignage.com/forum/index.php/board,9.0.html
@@ -65,19 +65,19 @@ With node.js and npm you will be able to easily update to the latest version of 
 - change directory to: ```cd ./lib/node_modules/studiolite``` 
 - run the command ```node server.js``` if you wish to use the bundled express server
 - you may also host it directly on your own web server if you like, such as apache or IIS
-- open browser and point it to ```[YOUR_IP]:8080/_studiolite-dist/studiolite.html```
+- open browser and point it to ```[YOUR_IP]:8080/_studiolite-dist/studiolite.mcs.html```
 
 <h4>Option 2:</h4>
 - Download the zip from GitHub
 - On your web server (i.e.: apache, IIS) create a root directory and name it: _studiolite-dist
 - Unzip all files into _studiolite-dist directory
-- open browser and point it to ```[YOUR_IP]/_studiolite-dist/studiolite.html```
+- open browser and point it to ```[YOUR_IP]/_studiolite-dist/studiolite.mcs.html```
 - IMPORTANT: make sure _studiolite-dist is in the root of web server
 
 Main html files
 ------------------------------------------------------------------------
 - If you are using the mediaCLOUD or this repo on GithHub, to host this 
- project on your own server you will use: ```studiolite.html``` to load the app
+ project on your own server you will use: ```studiolite.mcs.html``` to load the app
 - If you are using a private or hybrid mediaSERVER you will find in your 
  server distribution the file: ```index.html``` to load the app
  

@@ -55,7 +55,7 @@ gulp.task('minifyHTML', function (done) {
 
 gulp.task('liveServer', ['watchTmpDir'], function () {
     server = express();
-    server.use(express.static('C:/msweb/signagestudio_web-lite/studiolite.html'));
+    server.use(express.static('C:/msweb/signagestudio_web-lite/studiolite.mcs.html'));
     server.listen(8002);
     browserSync({
         proxy: 'localhost:8002'
@@ -78,7 +78,7 @@ gulp.task('_uploadDocs', shell.task([
 
 gulp.task('_uploadVersionFiles', shell.task([
     'scp /cygdrive/c/msweb/signagestudio_web-lite/package.json Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dist/',
-    'scp /cygdrive/c/msweb/signagestudio_web-lite/studiolite.html Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dist/'
+    'scp /cygdrive/c/msweb/signagestudio_web-lite/studiolite.mcs.html Sean@digitalsignage.com:/var/www/sites/dynasite/htdocs/_studiolite-dist/'
 ]));
 
 gulp.task('_genDocs', function () {
@@ -157,10 +157,10 @@ function updVersion() {
     var dashVersion = '<span class="dashboardBullets" data-localize="version"> Version :BUILD: </span>';
     dashVersion = dashVersion.replace(/:BUILD:/gi, fullBuild);
 
-    var studiolite = fs.readFileSync('studiolite.html', 'utf8');
+    var studiolite = fs.readFileSync('studiolite.mcs.html', 'utf8');
     studiolite = studiolite.replace(/<span class="reshid hiddenElement" id="footerText">(.*)<\/span>/gi, footer);
     studiolite = studiolite.replace(/<span class="dashboardBullets" data-localize="version">(.*)<\/span>/gi, dashVersion);
-    fs.writeFileSync('studiolite.html', studiolite, 'utf8');
+    fs.writeFileSync('studiolite.mcs.html', studiolite, 'utf8');
 
     // add build number to npm
     var git = fs.readFileSync('README.md', 'utf8');
@@ -178,14 +178,14 @@ function updVersion() {
 }
 
 gulp.task('_htmlMinify', function () {
-    return gulp.src('studiolite.html')
+    return gulp.src('studiolite.mcs.html')
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('temp/tmp_studiolite.html'))
+        .pipe(gulp.dest('temp/tmp_studiolite.mcs.html'))
 });
 
 gulp.task('_htmlCopy', function () {
-    return gulp.src("temp/tmp_studiolite.html")
-        .pipe(rename("studiolite.html"))
+    return gulp.src("temp/tmp_studiolite.mcs.html")
+        .pipe(rename("studiolite.mcs.html"))
         .pipe(gulp.dest("./"));
 });
 

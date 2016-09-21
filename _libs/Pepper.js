@@ -403,7 +403,7 @@ Pepper.prototype = {
         var protocol = window.g_protocol;
         if (window.g_masterDomain == 'galaxy.signage.me')
             protocol = 'https://';
-        return protocol + window.g_masterDomain + '/_studiolite-dist/studiolite.html';
+        return protocol + window.g_masterDomain + '/_studiolite-dist/studiolite.mcs.html';
     },
 
     /**

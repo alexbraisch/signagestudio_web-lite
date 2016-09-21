@@ -37,13 +37,13 @@ echo 'copying finished, site is now LIVE!!!'
 
 
 ### final source changes ###
-echo 'making internal changes to studiolite.html'
+echo 'making internal changes to studiolite.mcs.html'
 ./presetDist.js
 
 
 ### remove src from dist ###
-# echo 'removing dist dev source file ../../_studiolite-dist/src_studiolite.html'
-# rm ../../_studiolite-dist/src_studiolite.html
+# echo 'removing dist dev source file ../../_studiolite-dist/src_studiolite.mcs.html'
+# rm ../../_studiolite-dist/src_studiolite.mcs.html
 
 
 ### create backup ###
@@ -53,5 +53,5 @@ tar -pczf /tmp/studiolite-dist.tar.gz ../../_studiolite-dist/
 
 ### upload to remote server ###
 echo 'uploading to galaxy for private server and old distributions'
-### cp ../redirect.html ../../_studiolite-dist/studiolite.html
+### cp ../redirect.html ../../_studiolite-dist/studiolite.mcs.html
 ./copyRemote.js
