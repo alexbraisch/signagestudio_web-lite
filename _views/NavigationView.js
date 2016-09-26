@@ -101,7 +101,7 @@ define(['jquery', 'backbone','TimelineMax', 'TweenMax', 'TutorialView'], functio
 
             $(Elements.CLASS_LOGOUT_PANEL).on('click', function () {
                 self.resetPropertiesView();
-                appEntryFaderView.selectView(Elements.APP_LOGOUT);
+                appEntryFaderView.selectView(Elements.APP_LOGIN);
                 BB.comBroker.getService(BB.SERVICES['APP_AUTH']).logout();
                 self._closeMobileNavigation();
             });
